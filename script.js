@@ -17,10 +17,11 @@ async function conversationAssistantAdd(response) {
 async function open_test() {
   let url = "https://api.openai.com/v1/chat/completions";
   let part1 = "sk";
-  let part2 = "-A4pJboCGCsukQ34LZOpi";
-  let part3 = "T3BlbkFJDNu6lmdk1FMM5VigWyXe";
+let part2 = "-FwTAQ8hQ31W8irBwTpMXT3BlbkFJ";
+let part3 = "tqFgcpK3EZmVIOsoPEKV";
 
-  let apikey = part1 + part2 + part3;
+let allParts = part1 + part2 + part3;
+
   let data = { model: "gpt-3.5-turbo", messages: conversation };
 
   try {
@@ -28,7 +29,7 @@ async function open_test() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apikey}`,
+        Authorization: `Bearer ${allParts}`,
       },
       body: JSON.stringify(data),
     });
